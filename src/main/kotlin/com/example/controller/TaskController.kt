@@ -33,12 +33,10 @@ class TaskController(
     suspend fun getTask(@PathVariable id: Long): ResponseEntity<Any> =
         taskService.getTask(id).toResponseEntity()
 
-    // TODO -> IN_PROGRESS
     @PatchMapping("/{id}/start")
     suspend fun startTask(@PathVariable id: Long): ResponseEntity<Any> =
         taskService.startTask(id).toResponseEntity()
 
-    // TODO или IN_PROGRESS -> DONE
     @PatchMapping("/{id}/complete")
     suspend fun completeTask(@PathVariable id: Long): ResponseEntity<Any> =
         taskService.completeTask(id).toResponseEntity()
